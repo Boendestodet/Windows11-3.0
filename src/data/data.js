@@ -310,6 +310,13 @@ const appsData = [
     subAction: "spotify",
     size: "w-10 h-10",
   },
+  {
+    id: 9,
+    name: "Notepad",
+    icon: "/images/apps/notepad.svg",
+    action: "notepad",
+    size: "w-10 h-10",
+  },
 ];
 
 // Export default data
