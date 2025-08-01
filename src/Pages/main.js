@@ -6,6 +6,7 @@ import StartMenu from "../components/layout/StartMenu";
 import Browser from "../components/apps/Browser";
 import Calculator from "../components/apps/Calculator";
 import VsCode from "../components/apps/VsCode";
+import Notepad from "../components/apps/Notepad";
 import Slider from "../components/utilities/Slider";
 import RecycleBin from "../components/apps/RecycleBin";
 import Apps from "../components/apps/Apps";
@@ -29,6 +30,7 @@ function Main() {
     vscode: false,
     recycle: false,
     app: false,
+    notepad: false,
   });
 
   const [aboutMe, setAboutMe] = useState(null);
@@ -40,12 +42,13 @@ function Main() {
       start: false,
       explorer: false,
       browser: false,
-      calculator: false,
-      vscode: false,
-      recycle: false,
-      app: false,
-      [window]: !windows[window],
-    });
+    calculator: false,
+    vscode: false,
+    recycle: false,
+    app: false,
+    notepad: false,
+    [window]: !windows[window],
+  });
 
     if (window === "explorer" && input !== null) {
       setAboutMe(input);
@@ -208,6 +211,11 @@ function Main() {
           <VsCode
             isAppOpen={windows.vscode}
             toggleVsCode={() => toggleWindow("vscode")}
+            bounds={bounds}
+          />
+          <Notepad
+            isAppOpen={windows.notepad}
+            toggleNotepad={() => toggleWindow("notepad")}
             bounds={bounds}
           />
           <Apps
